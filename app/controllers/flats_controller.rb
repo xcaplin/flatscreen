@@ -27,6 +27,15 @@ before_action :authenticate_user!, only: [:new, :import]
   	flash[:error] = 'Ruh roh'
   end
 
+  def thumbsup
+  end
+
+  def nothanks
+  end
+
+
+
+
   private
   def parameters
   	params.require(:flat).permit(:location, :image, :price, :upvotes)
