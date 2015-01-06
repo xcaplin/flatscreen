@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyText
+  image: MyString
+  price: 1
+  upvotes: 1
+
+two:
+  location: MyText
+  image: MyString
+  price: 1
+  upvotes: 1
