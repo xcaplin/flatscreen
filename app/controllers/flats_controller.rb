@@ -20,7 +20,7 @@ before_action :authenticate_user!, only: [:new, :import]
   	@flat = current_user.flats.new(parameters)
   	if @flat.valid?
   		@flat.save
-  		flash[:info] = 'New flat added'
+  		flash[:info] = 'New flats added'
   		return redirect_to root_path
   	end
 
@@ -28,10 +28,20 @@ before_action :authenticate_user!, only: [:new, :import]
   end
 
   def thumbsup
+  	flat = Flat.find(params[:id])
+  	user.votes.create!(flat: @flat, vote: 1)
+ # 	Flat.increment_counter("upvotes", flat.id)
+  	flash[:info] = 'Votes updated.'
+  	return redirect_to show_path
   end
 
   def nothanks
-  end
+  	flat = Flat.find(params[:id])
+  	user.votes.create!(flat: @flat, vote: 0)
+#  	Flat.increment_counter("killswitch", flat.id)
+  	flash[:info] = 'Nothanks'
+	return redirect_to show_path
+    end
 
 
 
