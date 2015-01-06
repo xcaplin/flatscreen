@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
-  root 'flats#show'
+#devise_for :users
+#  root 'flats#show'
+
+#  devise_scope :user do
+#    get 'logout' => 'devise/sessions#destroy', as:'logout'
+#  end
+
   get '/new' => 'flats#new'
-
-  devise_scope :user do
-    get 'logout' => 'devise/sessions#destroy', as:'logout'
-  end
-
   get '/index' => 'flats#index', as: 'index'
 
 
