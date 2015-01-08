@@ -1,3 +1,13 @@
-<p>img <%= @flat.image %></p>
-<p>loc <%= @flat.location %></p>
-<p>£££ <%= @flat.price %></p>
+<p>loc <%= flat.location %></p>
+<p>£££ <%= flat.price %></p>
+<p>vot <%= flat.votes.count %></p>
+
+<div>
+	<form action="<%= thumbsup_path(flat) %>">
+	<button>Thumbs up</button></form>
+
+	<form action="<%= nothanks_path(flat) %>">
+	<button>No thanks</button>
+	</form>
+
+</div>

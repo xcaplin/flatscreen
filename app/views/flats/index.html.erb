@@ -1,4 +1,15 @@
 <h1>flatscreen.io</h1>
-<p>Like tinder but for actually where you live.</p><br>
+<p>Like tinder but for something important.</p><br>
 
-Shortlist page.
+<p>Shortlist page.</p>
+<p></p>
+<p>You've seen <%= @flats.count %> flats.</p>
+<p></p>
+<p>Here's your shortlist:</p>
+<p></p>
+
+<% @flats.each do |flat| %>
+	<%= render partial: 'flat', locals: {flat: flat} %>
+	<% end %>
+
+

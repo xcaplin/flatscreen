@@ -10,11 +10,11 @@ devise_scope :user do
   get '/new' => 'flats#new'
   get '/index' => 'flats#index', as: 'index'
 
-  put '/thumbsup/:id' => 'flats#thumbsup', as: 'thumbsup'
-  put '/nothanks/:id' => 'flats#nothanks', as: 'nothanks'
+  get '/thumbsup/:id' => 'flats#thumbsup', as: 'thumbsup'
+  get '/nothanks/:id' => 'flats#nothanks', as: 'nothanks'
 
-  get '/thumbsup' => 'flats#show'
-  get '/nothanks' => 'flats#show'
+#  get '/thumbsup' => 'flats#show'
+#  get '/nothanks' => 'flats#show'
 
 
 
