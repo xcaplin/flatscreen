@@ -1,6 +1,6 @@
 <p>loc <%= flat.location %></p>
 <p>£££ <%= flat.price %></p>
-<p>vot <%= flat.votes.count %></p>
+<p>vot <%= flat.votes.sum(:upvote) %></p>
 
 <div>
 	<form action="<%= thumbsup_path(flat) %>">

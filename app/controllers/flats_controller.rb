@@ -26,7 +26,7 @@ before_action :authenticate_user!, only: [:new, :import]
   		return redirect_to root_path
   	end
 
-  	flash[:error] = 'Ruh roh'
+#  	flash[:error] = 'Ruh roh'
   end
 
  # def thumbsup
@@ -44,6 +44,11 @@ before_action :authenticate_user!, only: [:new, :import]
   	return redirect_to root_path
   end
 
+  def nothanks
+  	flat= Flat.find(params[:id])
+  	flat.killswitch(current_user)
+  	return redirect_to root_path
+  end
 
 
   

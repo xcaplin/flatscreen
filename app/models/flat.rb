@@ -16,8 +16,12 @@ has_many :votes
 	end
 
 	def killswitch(user)
-		votes.create!({ upvote: 0, user: user})
+		votes.create!({ upvote: -1, user: user})
 	end
+
+	def totalvotes(flat)
+	end
+
 
 	def self.next_flat_for_user(user)
 		self.all.find { |flat| flat.upvotes_by_user(user).count == 0}
